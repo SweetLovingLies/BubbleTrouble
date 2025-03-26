@@ -21,7 +21,7 @@ struct MainMenu: View {
                 HStack {
                     Spacer()
                     VStack(spacing: 5) {
-                        Image("highscore")
+                        Image("HighScore")
                         
                         Text("\(highScore)") //display score
                             .font(.system(size: 50, weight: .bold, design: .rounded))
@@ -33,9 +33,9 @@ struct MainMenu: View {
             }
 
             Image("Plate")
-            Image("bubbles")
+            Image("Bubbles")
                 .padding(.top, 850)
-            Image("title")
+            Image("Title")
                 .padding(.top, -400)
             
             Button(action: {
@@ -51,7 +51,7 @@ struct MainMenu: View {
             Button(action: {
                 // action
             }) {
-                Image("button2")
+                Image("HowToPlayButton")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 700, height: 1000)
@@ -63,7 +63,7 @@ struct MainMenu: View {
                 Button(action: {
                     // action
                 }) {
-                    Image("unmute")
+                    Image("UnmuteButton")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
@@ -73,7 +73,7 @@ struct MainMenu: View {
                 Button(action: {
                     // action
                 }) {
-                    Image("mute")
+                    Image("MuteButton")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200, height: 200)
