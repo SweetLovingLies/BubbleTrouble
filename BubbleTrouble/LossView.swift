@@ -8,54 +8,49 @@
 import SwiftUI
 
 struct LossView: View {
-    
+
     var body: some View {
         ZStack {
-            Image("BG")
+            Image("Background")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
-            
+            Image("RoundedRectangle")
+
             VStack(spacing: 20) {
-                Text("YOU LOST!")
+                Image("YouLost")
                     .font(.custom("Rounded MT Bold", size: 90))
-                    .foregroundColor(.blue)
                     .bold()
-                
+
                 Text("HIGH SCORE: 521")
                     .font(.custom("Lobster", size: 50))
                     .foregroundColor(.white)
-                
+
                 VStack(spacing: 15) {
                     Button {
-                       
+
                     } label: {
-                        Text("PLAY AGAIN")
+                        Image("PlayAgain")
                             .font(.custom("Lobster", size: 40))
-                            .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
                             .cornerRadius(10)
+                        
                     }
+                    .buttonStyle(.plain)
 
                     Button {
                     } label: {
-                        Text("Main Menu")
+                        Image("MainMenu")
                             .font(.custom("Lobster", size: 40))
-                            .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
+                    .buttonStyle(.plain)
+
                 }
                 .padding()
             }
-            .padding()
-            .frame(width: 800)
-            .background(Color.white.opacity(0.2))
-            .cornerRadius(20)
-            .shadow(radius: 10)
+            
         }
     }
 }
