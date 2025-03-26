@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//
 struct MainMenu: View {
     @State private var highScore: Int = 0
 
