@@ -69,8 +69,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func spawnObjects() {
         let createObject = SKAction.run { [weak self] in
-            let objectNames = ["Shark", "LargeRock", "SmallRock", "EvilOctopus", "CuteOctopus", "Plank", "Bike"]
-           // let collectBubbles = ["Bubbles"]
+            let objectNames = ["Shark", "SmallRock", "EvilOctopus", "CuteOctopus", "Plank", "Bike"]
+            
             let randomName = objectNames.randomElement()!
             let object = SKSpriteNode(imageNamed: randomName)
             object.position = CGPoint(x: self!.size.width / 2, y: CGFloat.random(in: -self!.size.height / 2...self!.size.height / 2))
@@ -126,12 +126,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func handleCollision(with object: SKSpriteNode) {
         if object.name == "Obstacle" {
             gameOver()
-        } else if object.name == "Bubble" {
-            collectBubble()
-        } else if object.name == "Bonus" {
-            currentScore += 5
-            updateScore()
         }
+        
+//        } else if object.name == "Bubble" {
+//            collectBubble()
+//        } else if object.name == "Bonus" {
+//            currentScore += 5
+//            updateScore()
+//        }
 
         object.removeFromParent()
         objects.removeAll { $0 == object }
@@ -152,19 +154,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fish.removeFromParent()
     }
 
-    func collectBubble() {
-        currentScore += 1
-        updateScore()
-        shieldLevel += 1
-        updateShieldProgress()
-    }
+//    func collectBubble() {
+//        currentScore += 1
+//        updateScore()
+//        shieldLevel += 1
+//        updateShieldProgress()
+//    }
 
     func updateScore() {
         scoreLabel.text = "Score: \(currentScore)"
     }
 
-    func updateShieldProgress() {
-        let progress = CGFloat(shieldLevel) / 10
-        shieldProgressBar.size.width = 200 * progress
-    }
+//    func updateShieldProgress() {
+//        let progress = CGFloat(shieldLevel) / 10
+//        shieldProgressBar.size.width = 200 * progress
+//    }
 }
