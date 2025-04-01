@@ -8,11 +8,8 @@ import SwiftUI
 
 struct ControlsView: View {
     var body: some View {
-        
-       
-            
+    
         ZStack {
-            
             Image("Background")
                 .resizable()
                 .scaledToFill()
@@ -23,7 +20,6 @@ struct ControlsView: View {
             }
         
         HStack(spacing: -50) {
-                
                 
                 Image("Controller")
                     .resizable()
@@ -40,7 +36,6 @@ struct ControlsView: View {
             .padding(-800)
         }
     }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
